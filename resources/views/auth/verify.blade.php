@@ -4,6 +4,12 @@
 verify
 @endsection
 
+{{-- @extends('auth.template.index')
+
+@section('content')
+verify
+@endsection
+
 
 <!-- @extends('layouts.app')
 
@@ -32,4 +38,4 @@ verify
         </div>
     </div>
 </div>
-@endsection -->
+@endsection --> --}}

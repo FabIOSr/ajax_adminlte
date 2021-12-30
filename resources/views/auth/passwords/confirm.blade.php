@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('auth.template.index')
+
+@section('content')
+Confirm
+@endsection
+
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -46,4 +52,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

@@ -1,17 +1,30 @@
 <?php
 
+use App\Http\Controllers\Panel\MainController;
+use App\Http\Controllers\Site\MainController as SiteMainController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// rotas do site
+Route::name('site.')->group(function(){
+    Route::name('main.')->group(function(){
+        Route::get('/', [SiteMainController::class, 'index'])->name('index');
+    });
+});
+
+// rotas do painel
+Route::middleware(['auth'])->name('panel.')->group(function(){
+    Route::name('main.')->group(function(){
+        Route::get('/painel-de-controle', [MainController::class, 'index'])->name('index');
+    });
+});
+
+//rotas de sistemas
+Route::name('system.')->group(function(){
+    Route::name('main.')->group(function(){
+        Route::get('/system', '\App\Http\Controllers\Controller\System\MainController@index')->name('index');
+    });
+});
+
 
 Route::get('/', function () {
     return view('welcome');
