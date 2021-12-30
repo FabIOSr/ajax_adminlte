@@ -1,4 +1,11 @@
-@extends('layouts.app')
+@extends('auth.template.index')
+
+@section('content')
+Register
+@endsection
+
+
+<!-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -74,4 +81,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection -->
