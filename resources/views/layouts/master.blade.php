@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>AdminLTE 3 | Starter</title>
+  <title>Hotelaria | </title>
 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -22,7 +22,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-bold">AdminLTE</span>
+      <span class="brand-text font-weight-bold">Hotelaria</span>
     </a>
 
     <!-- Sidebar -->
