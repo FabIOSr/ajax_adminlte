@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,24 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $dadosValidos = $request->validate([
+            'username' => 'required|min:4',
+            'password' => 'required|min:4'
+        ]);
+
+        //$dadosValidos['active'] = true;
+
+        if(Auth::attempt($dadosValidos)){
+            return redirect(route('home'));
+        }
+
+        return redirect()
+            ->back()
+            ->with('message', 'Usuário ou senha invalido')
+            ->withInput();
     }
 }
